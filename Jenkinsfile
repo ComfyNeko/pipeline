@@ -18,7 +18,7 @@ pipeline {
 
             steps { 
 
-                git 'https://github.com/ComfyNeko/working.git' 
+                git 'https://github.com/ComfyNeko/pipeline.git' 
 
             }
 
