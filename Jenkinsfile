@@ -1,4 +1,14 @@
-pipeline { 
+pipeline {
+    agent { docker 'php' }
+    stages {
+        stage('build') {
+            steps {
+                sh 'php --version'
+            }
+        }
+    }
+}
+/* pipeline { 
 
     environment { 
 
@@ -24,7 +34,7 @@ pipeline {
 
         } */ 
 
-        stage('Building our image') { 
+  /*      stage('Building our image') { 
 
             steps { 
 
@@ -68,3 +78,4 @@ pipeline {
     }
 
 }
+*/
