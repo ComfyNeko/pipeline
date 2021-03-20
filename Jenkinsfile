@@ -2,9 +2,9 @@ pipeline {
 2
     environment { 
 3
-        registry = "YourDockerhubAccount/YourRepository" 
+        registry = "comfyneko/dockertest" 
 4
-        registryCredential = 'dockerhub_id' 
+        registryCredential = 'comfyneko' 
 5
         dockerImage = '' 
 6
@@ -18,7 +18,7 @@ pipeline {
 10
             steps { 
 11
-                git 'https://github.com/YourGithubAccount/YourGithubRepository.git' 
+                git 'https://github.com/ComfyNeko/working.git' 
 12
             }
 13
