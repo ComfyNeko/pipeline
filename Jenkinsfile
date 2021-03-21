@@ -1,4 +1,4 @@
-pipeline {
+/* pipeline {
     agent { docker 'php' }
     stages {
         stage('build') {
@@ -7,75 +7,42 @@ pipeline {
             }
         }
     }
-}
-/* pipeline { 
-
+} */
+pipeline { 
+    
     environment { 
-
         registry = "comfyneko/dockertest" 
-
-        registryCredential = 'comfyneko' 
-
+        registryCredential = 'dockertest' 
         dockerImage = '' 
-
     }
-
     agent any 
-
     stages { 
-
-        /*stage('Cloning our Git') { 
-
+        stage('Cloning our Git') { 
             steps { 
-
-                git 'https://github.com/ComfyNeko/pipeline.git' 
-
+                git url:'https://github.com/ComfyNeko/pipeline.git', branch: 'main'
             }
+        } 
 
-        } */ 
-
-  /*      stage('Building our image') { 
-
+        stage('Building our image') { 
             steps { 
-
                 script { 
-
                     dockerImage = docker.build registry + ":$BUILD_NUMBER" 
                 }
-
             } 
-
         }
-
         stage('Deploy our image') { 
-
             steps { 
-
                 script { 
-
                     docker.withRegistry( '', registryCredential ) { 
-
                         dockerImage.push() 
-
                     }
-
                 } 
-
             }
-
         } 
-
         stage('Cleaning up') { 
-
             steps { 
-
                 sh "docker rmi $registry:$BUILD_NUMBER" 
-
             }
-
         } 
-
     }
-
 }
-*/
