@@ -1,2 +1,2 @@
-FROM PHP 7.2.24-apache
+FROM PHP 7.4-apache
 COPY . /var/www/html/
